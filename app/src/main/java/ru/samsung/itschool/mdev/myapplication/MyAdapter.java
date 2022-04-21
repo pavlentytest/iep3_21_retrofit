@@ -1,5 +1,6 @@
 package ru.samsung.itschool.mdev.myapplication;
 
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -12,7 +13,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewRow> {
     @NonNull
     @Override
     public ViewRow onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return null;
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_item,parent, false);
+        return new ViewRow(view);
     }
 
     @Override
