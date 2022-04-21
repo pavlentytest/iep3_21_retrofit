@@ -52,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
                 if(response.code() == 200) {
                     assert response.body() != null;
                     anekdots.addAll(response.body());
+                    Log.d("RRR","Size:" + anekdots.size());
                     Objects.requireNonNull(recyclerView.getAdapter()).notifyDataSetChanged();
                 } else {
                     Log.d("RRR","Response code:" + response.code());
